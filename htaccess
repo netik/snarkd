@@ -1,0 +1,11 @@
+
+Options +ExecCGI
+
+# Let's keep these URLs on the secure server.
+
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /sign/
+  RewriteCond %{HTTPS} !=on [NC]
+  RewriteRule ^(admin|dj|promoter) https://www.dnalounge.com%{REQUEST_URI} [R=301,QSA,L]
+</IfModule>

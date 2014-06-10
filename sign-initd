@@ -1,0 +1,59 @@
+#!/bin/sh
+#
+# sign-initd	start/stop the sign daemon
+#
+# chkconfig: 345 96 24
+# description: start/stop the sign daemon
+
+# Source function library.
+. /etc/rc.d/init.d/functions
+
+sign_user=sign
+dir=/home/sign/snarkd
+
+PATH=$dir:$PATH
+export PATH
+
+
+# See how we were called.
+case "$1" in
+  start)
+
+    cd $dir
+
+    echo -n "Starting sign daemon..."
+    su $sign_user -c "$dir/snarkd-wrapper.sh &" >/dev/null 2>&1
+    echo "done."
+    ;;
+
+  stop)
+
+    echo -n "Stopping sign daemon..."
+
+    # "killall" hates sh scripts...
+    #killall snarkd snarkd-wrapper.sh
+    pids=`ps auxww | \
+     grep 'snarkd-wrapper\.sh\|perl .*/snarkd' | \
+     grep -v grep | \
+     sed 's/  */ /g' | \
+     cut -d' ' -f2`
+    pids=`echo $pids`
+    if [ "$pids" != "" ]; then
+      echo -n " ($pids) "
+      kill $pids
+    else
+      echo -n " (nothing to kill) "
+    fi
+
+    echo "done."
+    ;;
+
+  restart)
+    $0 stop
+    $0 start
+    ;;
+
+  *)
+    echo "Usage: $0 {start|stop|restart}"
+    exit 1
+esac

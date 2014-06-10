@@ -1,0 +1,6 @@
+Revision history for Perl extension Config::INI::Simple.
+
+0.01  Sat Jan 21 13:29:14 2006
+	- original version; created by h2xs 1.23 with options
+		-X -n Config::INI::Simple
+

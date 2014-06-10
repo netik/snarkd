@@ -1,0 +1,32 @@
+# $Id: README,v 1.1 2008/04/30 22:59:42 jwz Exp $
+
+Snark - A series of scripts to run a Translux Datawall from the serial
+or ethernet port for a nightclub.
+
+Requirements:
+
+- SnarkAPI - Open Source Datawall API. 
+- Translux Datawall (duh.)
+- A web server (apache!)
+- Serial interface to the datawall (see DATAWALL for more info)
+   - We're using a Lantronix UDS-10 Ethernet to Serial adapter 
+- Perl 5
+
+...and A few PERL Modules:
+
+Config::INI::Simple - Manages the "config" file, snark.ini, which is
+actually the main message and control database. 
+Text::Template - To provide for seperation of code and layout for the HTML pages
+HTML::TagFilter - To filter out html from posts.
+Text::Wrap - To wrap text when sending it to the sign.
+Net::SMTP - For the SMTP Interface
+HTML::Parser
+MIME::Parser - Parse and process incoming messages 
+Getopt::Long - Processes options
+
+Optional Plugins:
+
+Geo::WeatherNWS - if you want the weather.
+XML::Parser::Lite - to parse XML 
+XML::RSS::Parser::Lite - to parse RSS
+

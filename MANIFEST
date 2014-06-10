@@ -1,0 +1,52 @@
+These files are in the snark package:
+
+admin/
+
+Password-protected (.htaccess) snarkadmin.cgi script which manages the
+whole system. Must be run once, and the 'confirm' button clicked
+before anything will work (alternately you can copy snark.ini-dist to
+snark.ini and make it writeable by the webserver.)
+
+djadd.cgi
+
+Song / Title / DJ name / Setlist manager (we use this software
+in a nightclub to show the current playing song. 
+
+snarkadd.cgi
+
+Public add message script - supports filtering, censorship,
+denial-of-service protection, etc.
+
+mail/
+
+contains canned responses and test messages for the mail responder
+
+
+mail-responder.pl
+
+A perl script to accept email and pipe it into the message
+queue. Supports everything that snarkadd.cgi does.
+
+plugins/ 
+
+A directory filled with interesting things the sign can
+display. Weather, Livejournal, Finance quotes, a clock, RSS readers,
+nightclub calendars, blah, blah blah...
+
+snark-api/
+
+Where the SnarkAPI lives. This is a C Prorgam that communicates with a
+Translux datawall display.
+
+snarkd
+
+This program runs the sign. It reads from snark.ini and processes
+messages, sorting them by priority.
+
+snark.ini
+The main config file.
+
+
+
+
+

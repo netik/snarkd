@@ -1,0 +1,88 @@
+
+
+#specials
+{
+  size: 7px;
+}
+
+#desc
+{
+	background-color: #004400;
+}
+
+#header
+{
+color: #ffffff;
+font-size: 18px;
+border: 1px solid #00ff00;
+background-color: #002200;
+padding: 3px;
+}
+
+#header a
+{ 
+	color: #ffff00
+}
+
+#header a:hover
+{
+	color: #ff0000
+}
+
+p a
+{ 
+	color: #ffff00
+}
+
+p a:hover
+{
+	color: #ff0000
+}
+
+#snarklist
+{
+	background-color: #002200;
+}
+
+
+#setlist
+{
+	background-color: #444444;
+	font-size: 16px;
+}
+
+#inqueue
+{
+	background-color: #002200;
+}
+
+
+#inqueue a 
+{
+color: #ffff00;
+}
+
+#currentmsg
+{
+background-color: #302cc4;
+}
+
+#inqueue a 
+{
+color: #ffff00;
+}
+
+#inqueue a:hover
+{
+color: #ff0000;
+}
+
+#currentmsg a 
+{
+color: #ffff00;
+}
+
+#currentmsg a:hover
+{
+color: #ff0000;
+}
